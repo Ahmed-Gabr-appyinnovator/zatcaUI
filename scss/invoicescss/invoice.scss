@@ -1,0 +1,322 @@
+// General client section styling
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 20px 50px;
+}
+
+.invoice {
+  font-family: 'Rubik', sans-serif;
+    direction: rtl;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    margin: 0 50px;
+
+    .buttons{
+        display: flex;
+        gap: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: #2755fc;
+      color: #fff;
+
+      &:hover {
+        background-color: #1e3a8a;
+      }
+
+      &:active {
+        background-color: #1e40af;
+        transform: scale(0.95);
+      }
+
+      &:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 2px rgba(39, 85, 252, 0.5);
+      }
+
+      i {
+        margin-left: 0.5rem;
+      }
+    }
+
+    hr {
+      border: 0.5px solid rgba(0, 0, 0, 0.2);
+    }
+  
+
+  .popup-container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+
+    .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+      .popup-message {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      #cancel-button {
+        background-color: #6c757d;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #5a6268;
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 2px rgba(108, 117, 125, 0.5);
+        }
+      }
+    }
+
+    &.d-none {
+      display: none;
+    }
+  }
+
+  .send-zatca {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: #2755fc;
+      color: #fff;
+
+      &:hover {
+        background-color: #1e3a8a;
+      }
+
+      &:active {
+        background-color: #1e40af;
+        transform: scale(0.95);
+      }
+
+      &:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 2px rgba(39, 85, 252, 0.5);
+      }
+
+      i {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  label {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  input[type="date"] {
+    margin: 0.25rem 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    outline: none;
+    font-size: 1rem;
+    width: 200px;
+
+    &:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 2px rgba(39, 85, 252, 0.5);
+    }
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #2755fc;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #1e3a8a;
+    }
+
+    &:active {
+      background-color: #1e40af;
+      transform: scale(0.95);
+    }
+
+    &:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 2px rgba(39, 85, 252, 0.5);
+    }
+  }
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+  input[type="text"] {
+    text-align: right;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+
+    &:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 2px rgba(39, 85, 252, 0.5);
+    }
+  }
+}
+
+hr {
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.data_table {
+  direction: rtl;
+
+  th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    text-align: center; // Center-aligns the text horizontally in <th>
+    vertical-align: middle; // Center-aligns the text vertically in <th>
+  }
+
+  td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    // No text alignment set for <td> to keep default alignment
+  }
+
+  .dataTables_filter {
+    display: none;
+  }
+}
+
+// Media Query for screens 768px and below
+@media (max-width: 768px) {
+  .invoice {
+    padding: 1rem;
+    flex-direction: column;
+
+    .title {
+      font-size: 1.2rem;
+    }
+  }
+
+  .popup-container {
+    .popup-content {
+      width: 90%; // Ensure pop-up is responsive
+      max-width: 100%; // Make pop-up responsive on very small screens
+      padding: 1rem; // Adjust padding for smaller screens
+    }
+  }
+
+  .add-invoice {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .send-zatca {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .filter {
+    padding: 0.5rem;
+
+    label {
+      font-size: 0.5rem;
+    }
+
+    input[type="date"] {
+      width: 20%;
+    }
+
+    button {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .search-bar {
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .data_table {
+    th, td {
+      max-width: 200px; // Adjust max-width for smaller screens
+    }
+  }
+}

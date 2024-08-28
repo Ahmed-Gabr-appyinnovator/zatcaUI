@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشركة</title>
+    <link rel="stylesheet" href="./scss/companyscss/company-form.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./scss/generalscss/general.css">
+    <link rel="stylesheet" href="./scss/headerscss/header.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>بوابة هيئة الدخل و الزكاة</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="./company-form.html">الشركة</a></li>
+                    <li><a href="./logs.html">السجلات</a></li>
+                    <li><a href="./clients.html">العملاء</a></li>
+                    <li><a href="./BillingErrorChecking.html">فحص خلل الفواتير</a></li>
+                    <li><a href="./users.html">المستخدمين</a></li>
+                    <li><a href="./Devices.html">الجهاز</a></li>
+                    <li><a href="./invoices.html">الفواتير</a></li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-main">
+        <div class="company container">
+            <h1 class="title">اضافة شركة جديدة</h1>
+            <hr>
+            <form>
+                <div class="form-box">
+                    <h1 class="sub-title">معلومات هيئة الزكاة</h1>
+                    <div class="form-group">
+                        <input type="text" placeholder="مرحلة الدمج مع هيئة الزكاة">
+                        <input type="text" placeholder="الرقم الضريبي">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="المعرف الثاني">
+                        <select>
+                            <option value="" selected>رقم التعريف الضريبي - Tax Identification Number</option>
+                            <option value="">رقم جواز السفر - Passport ID</option>
+                            <option value="">اخري - Other</option>
+                            <option value="">السجل التجاني -  CR - Commercial Registration Number</option>
+                            <option value="">ترخيص وزاره الشوؤن البلدية و القروية - MOMRAH License</option>
+                            <option value="">ترخيص وزارة الموارد البشرية و التنمية الاجتماعية - MHRSD License</option>
+                            <option value="">رقم ٧٠٠ - Number 700</option>
+                            <option value="">ترخيص الهيئة العامة للاستثمار - MISA License</option>
+                            <option value="">الهوية الوطنية - National ID</option>
+                            <option value="">معرف دول مجلس التعاون الخليجي - GCC ID</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="فئة الضريبة الرئيسية">
+                        <input type="text" placeholder="فئة الضريبة الفرعية">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="طريقة ارسال فواتير B2C لهيئة الزكاة">
+                        <input type="text" placeholder="نوع الفواتير المدعومة">
+                    </div>
+                </div>
+                <div class="form-box">
+                    <h1 class="sub-title">العنوان</h1>
+                    <div class="form-group">
+                        <input class="full-width" type="text" placeholder="رقم المبنى">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="الشارع بالعربية">
+                        <input type="text" placeholder="الشارع بالانجليزية">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="المقاطعة بالعربية">
+                        <input type="text" placeholder="المقاطعة بالإنجليزية">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="المدينة بالعربية">
+                        <input type="text" placeholder="المدينة بالإنجليزية">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="المحافظة بالعربية">
+                        <input type="text" placeholder="المحافظة بالإنجليزية">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="رقم صندوق بريد">
+                        <input type="text" placeholder="رقم صندوق بريد إضافي">
+                    </div>
+                    <div class="form-group">
+                        <select class="full-width">
+                            <option value="" selected disabled>البلد</option>
+                            <option value="">مصر</option>
+                            <option value="">السعودية</option>
+                            <option value="">المملكة العربية السعودية</option>
+                        </select>
+                    </div>
+                    <div class="btn">
+                        <input type="submit" value="ارسال">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

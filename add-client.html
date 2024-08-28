@@ -1,0 +1,146 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اضافة عميل جديد</title>
+    <link rel="stylesheet" href="scss/addclientscss/addClient.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./scss/generalscss/general.css">
+    <link rel="stylesheet" href="./scss/headerscss/header.css">
+
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>بوابة هيئة الدخل و الزكاة</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="./company-form.html">الشركة</a></li>
+                    <li><a href="./logs.html">السجلات</a></li>
+                    <li><a href="./clients.html">العملاء</a></li>
+                    <li><a href="./BillingErrorChecking.html">فحص خلل الفواتير</a></li>
+                    <li><a href="./users.html">المستخدمين</a></li>
+                    <li><a href="./Devices.html">الجهاز</a></li>
+                    <li><a href="./invoices.html">الفواتير</a></li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <div class="contanier-main">
+    
+    <div class="add-client container">
+        <h1 class="title">
+            اضافة عميل جديد
+        </h1>
+
+        <hr>
+
+        <!-- Company Form -->
+        <form>
+            <div class="form-group form-box">
+
+                <!-- First Row of Inputs -->
+                <div class="form-group">
+                    <input  type="text" placeholder="اسم العميل بالعربية">
+                    <input  type="text" placeholder="اسم العميل بالإنجليزية">
+                </div>
+
+                <!-- Second Row with Select Dropdown -->
+                <div class="form-group">
+                    <input type="text" placeholder="الرقم الضريبي">
+                    <input type="text" placeholder="المعرف الثاني">
+                  
+                </div>
+
+                <div class="form-group">
+
+                    <select name="" id="" >
+                        <option value="" selected disabled>نوع الفواتير المدعومة </option>
+                        <option value="">كلاهما</option>
+                        <option value="">B2C</option>
+                        <option value="">B2B</option>
+                    </select>
+
+                    <select name="" id="" >
+                        <option value="" selected disabled>نوع المعرف الثاني </option>
+                        <option value="">رقم التعريف الضريبي - Tax Identification Number</option>
+                        <option value="">رقم جواز السفر - Passport ID</option>
+                        <option value="">اخري - Other</option>
+                        <option value="">السجل التجاني -  CR - Commercial Registration Number</option>
+                        <option value="">ترخيص وزاره الشوؤن البلدية و القروية - MOMRAH License</option>
+                        <option value="">ترخيص وزارة الموارد البشرية و التنمية الاجتماعية - MHRSD License</option>
+                        <option value="">رقم ٧٠٠ - Number 700</option>
+                        <option value="">ترخيص الهيئة العامة للاستثمار - MISA License</option>
+                        <option value="">الهوية الوطنية - National ID</option>
+                        <option value="">معرف دول مجلس التعاون الخليجي - GCC ID</option>
+                    </select>
+
+
+                    <select name="" id="" class="full-width">
+                        <option value="" selected disabled>البلد</option>
+                        <option value="">مصر</option>
+                        <option value="">السعودية</option>
+                        <option value="">المملكة العربية السعودية</option>
+                    </select>
+                </div>
+
+                <!-- Third Row of Inputs -->
+                <div class="form-group">
+                    <input type="text" placeholder="رقم المبنى">
+                    <input type="text" placeholder="رقم صندوق بريد إضافي">
+                </div>
+
+                <!-- Fourth Row of Inputs -->
+                <div class="form-group">
+                    <input type="text" placeholder="المدينة بالعربية">
+                    <input type="text" placeholder="المدينة بالإنجليزية">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" placeholder="الرقم البريدي">
+                    <input type="text" placeholder="صندوق البريد">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" placeholder="الشارع بالعربية">
+                    <input type="text" placeholder="الشارع بالانجليزي">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" placeholder="المقاطعة بالعربية">
+                    <input type="text" placeholder="المقاطعة بالانجليزي">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" placeholder="المدينه بالعربيه">
+                    <input type="text" placeholder="المدينه بالانجليزيه">
+                </div>
+
+
+                <div class="form-group">
+                    <input type="text" placeholder="المحافظة بالعربية">
+                    <input type="text" placeholder="المحافظة بالانجليزية">
+                </div>
+
+                
+
+                <!-- Submit Button -->
+             <div class="btn">
+                <input type="submit" value="اضافة عميل جديد">
+            </div>
+            </div>
+
+            
+        </form>
+    </div>
+    </div>
+</body>
+</html>

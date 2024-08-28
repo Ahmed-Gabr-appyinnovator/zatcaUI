@@ -1,0 +1,225 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>invoices</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./scss/generalscss/general.css" />
+    <link rel="stylesheet" href="./scss/headerscss/header.css" />
+    <link rel="stylesheet" href="./scss/invoicescss/invoice.scss">
+    <link rel="stylesheet" href="./scss/invoicescss/invoice.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <div class="logo">
+          <h1>بوابة هيئة الدخل و الزكاة</h1>
+        </div>
+        <nav class="navigation">
+          <ul>
+            <li><a href="./company-form.html">الشركة</a></li>
+            <li><a href="./logs.html">السجلات</a></li>
+            <li><a href="./clients.html">العملاء</a></li>
+            <li><a href="./BillingErrorChecking.html">فحص خلل الفواتير</a></li>
+            <li><a href="./users.html">المستخدمين</a></li>
+            <li><a href="./Devices.html">الجهاز</a></li>
+            <li><a href="./invoices.html">الفواتير</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <div class="container-main">
+      
+      <div class="invoice">
+        <h1 class="title">الفواتير</h1>
+        <div class="buttons">
+          <a href="./addInvoice.html">
+            <button>
+              اضافة فاتورة جديد
+              <i class="fas fa-plus"></i>
+            </button>
+          </a>
+
+          <a href="">
+            <button>
+              ارسال المحدد الي هيئة الزكاة
+              <i class="fas fa-plus"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+
+  
+
+      <hr /> 
+
+
+      <div class="filter">
+        <label for="startDate">من تاريخ:</label>
+        <input type="date" id="startDate" />
+        <label for="endDate">إلى تاريخ:</label>
+        <input type="date" id="endDate" />
+        <button id="filterButton">تفريغ</button>
+      </div>
+
+      <div class="search-bar container">
+        <input
+          type="text"
+          id="customSearch"
+          placeholder="ابحث برقم الفاتورة"
+        />
+      </div>
+
+      <div class="container-main">
+        <div class="container mt-1">
+          <div class="data_table">
+            <table
+              id="example"
+              class="table table-striped table-bordered table-hover"
+              style="width: 100%">
+              <thead>
+                <tr>
+                  <th>رقم الفاتورة</th>
+                  <th>رقم فاتورة النظام</th>
+                  <th>تاريخ الفاتورة</th>
+                  <th>نوع الفاتورة</th>
+                  <th>المدفع</th>
+                  <th>اجمالي الفاتورة</th>
+                  <th>الصافي</th>
+                  <th>قيمة الضريبة</th>
+                  <th>الاجمالي بالضريبة</th>
+                  <th>حالة الفاتورة</th>
+                  <th>الاعدادات</th>
+                  <th>تحميل او طباعة</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>50400</td>
+                  <td>61</td>
+                  <td>2024-08-20 17:45:40</td>
+                  <td>B2B</td>
+                  <td>69000</td>
+                  <td>0.000000</td>
+                  <td>60000.000000</td>
+                  <td>9000</td>
+                  <td>69000.000000</td>
+                  <td>فاتورة مرفوضة</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm" onclick="showInvoices()">عرض</button>
+                    <button class="btn btn-primary btn-sm" onclick="showPopup()">اظهار رسالة الخطأ</button>
+                  </td> 
+                  <td>
+                    <button class="btn btn-primary btn-sm">تحميل</button>
+                    <button class="btn btn-primary btn-sm">طباعة</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+    
+
+    $(document).ready(function () {
+  var table = $("#example").DataTable({
+    scrollX: true,
+    pagingType: "simple_numbers",
+    searching: true,
+    ordering: true,
+    info: true,
+    language: {
+      url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/ar.json",
+    },
+  });
+
+  $("#example thead th").css({
+    'text-align': 'center',
+    'vertical-align': 'middle'
+  });
+
+
+  $("#customSearch").on("keyup", function () {
+    var searchTerm = $(this).val();
+    table.search(searchTerm).draw();
+  });
+
+
+  function applyDateFilter() {
+    $.fn.dataTable.ext.search.push(
+      function (settings, data, dataIndex) {
+        var startDate = $("#startDate").val();
+        var endDate = $("#endDate").val();
+        var date = new Date(data[2]); // Assuming the date is in the third column (index 2)
+
+        if (
+          (startDate === "" && endDate === "") ||
+          (startDate === "" && date <= new Date(endDate)) ||
+          (endDate === "" && date >= new Date(startDate)) ||
+          (date >= new Date(startDate) && date <= new Date(endDate))
+        ) {
+          return true;
+        }
+        return false;
+      }
+    );
+  }
+
+  // Event listener for the filter button
+  $("#filterButton").on("click", function () {
+    applyDateFilter();
+    table.draw();
+    $.fn.dataTable.ext.search.pop();
+  });
+});
+
+      function showInvoices() {
+        window.location.href = "invoice-details.html";
+      }
+      function showPopup() {
+  $('#popup-container').removeClass('d-none');
+}
+
+function hidePopup() {
+  $('#popup-container').addClass('d-none');
+}
+
+
+$(document).ready(function () {
+
+  $('#showPopupButton').on('click', function () {
+    showPopup();
+  });
+
+  $('#cancel-button').on('click', function () {
+    hidePopup();
+  });
+});
+    </script>
+  </body>
+</html>

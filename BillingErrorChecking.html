@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعديل بيانات العميل</title>
+    <link rel="stylesheet" href="scss/BillingErrorCheckingscss/BillingErrorChecking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./scss/generalscss/general.css">
+    <link rel="stylesheet" href="./scss/headerscss/header.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>بوابة هيئة الدخل و الزكاة</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="./company-form.html">الشركة</a></li>
+                    <li><a href="./logs.html">السجلات</a></li>
+                    <li><a href="./clients.html">العملاء</a></li>
+                    <li><a href="./BillingErrorChecking.html">فحص خلل الفواتير</a></li>
+                    <li><a href="./users.html">المستخدمين</a></li>
+                    <li><a href="./Devices.html">الجهاز</a></li>
+                    <li><a href="./invoices.html">الفواتير</a></li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container-main">
+        <section class="BillingErrorChecking container">
+            <h1 class="title">فحص خلل الفواتير</h1>
+            <hr>
+            <div class="form-box">
+                <div class="form-group">
+                    <input type="date" placeholder="تاريخ البداية">
+                    <input type="date" placeholder="تاريخ النهاية">
+                </div>
+                <div class="btn-group">
+                    <input type="submit" value="فحص خلل الترتيب" class="btn">
+                    <input type="submit" value="فحص خلل الهاش" class="btn">
+                </div>
+            </div>
+            <div class="form-box" id="DisplayData"></div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fromDateInput = document.querySelector('input[placeholder="تاريخ البداية"]');
+            const toDateInput = document.querySelector('input[placeholder="تاريخ النهاية"]');
+            const displayDataDiv = document.getElementById("DisplayData");
+            const checkOrderBtn = document.querySelector('input[value="فحص خلل الترتيب"]');
+            const checkHashBtn = document.querySelector('input[value="فحص خلل الهاش"]');
+    
+            const hashErrorData = [
+                { id: 50611, invoice: '001', status: '/lCu8j7muVNa88M6Wl1zb4hDaRG6aVM8ZlN304nMgqs=' },
+                { id: 50611, invoice: '002', status: '/lCu8j7muVNa88M6Wl1zb4hDaRG6aVM8ZlN304nMgqs=' },
+                { id: 50611, invoice: '003', status: '/lCu8j7muVNa88M6Wl1zb4hDaRG6aVM8ZlN304nMgqs=' },
+            ];
+    
+            function displayOrderData() {
+                const fromDate = fromDateInput.value;
+                const toDate = toDateInput.value;
+    
+                if (fromDate && toDate) {
+                    displayDataDiv.innerHTML = `<p>عرض البيانات من تاريخ: ${fromDate} إلى تاريخ: ${toDate}</p>`;
+                } else {
+                    displayDataDiv.innerHTML = `<p>الرجاء ادخال تاريخ البداية والنهاية لعرض البيانات.</p>`;
+                }
+            }
+    
+            function displayHashErrorData() {
+                const fromDate = fromDateInput.value;
+                const toDate = toDateInput.value;
+    
+                if (fromDate && toDate) {
+                    let tableHTML = `
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>رقم الفاتورة</th>
+                                    <th>رقم الجهاز</th>
+                                    <th>هاش الفاتورة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+    
+                    hashErrorData.forEach(row => {
+                        tableHTML += `
+                            <tr>
+                                <td>${row.id}</td>
+                                <td>${row.invoice}</td>
+                                <td>${row.status}</td>
+                            </tr>
+                        `;
+                    });
+    
+                    tableHTML += `
+                            </tbody>
+                        </table>
+                    `;
+    
+                    displayDataDiv.innerHTML = tableHTML;
+                } else {
+                    displayDataDiv.innerHTML = `<p>الرجاء ادخال تاريخ البداية والنهاية لعرض البيانات.</p>`;
+                }
+            }
+    
+            checkOrderBtn.addEventListener("click", displayOrderData);
+            checkHashBtn.addEventListener("click", displayHashErrorData);
+        });
+    </script>
+</body>
+</html>

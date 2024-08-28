@@ -1,0 +1,101 @@
+.company {
+  font-family: "Rubik", sans-serif;
+  direction: rtl;
+  margin: 0 50px;
+}
+.company .title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.company hr {
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+.company .form-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(67, 67, 67, 0.1);
+  margin-top: 1rem;
+}
+.company .form-box .sub-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.company .form-box .form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.1rem;
+}
+.company .form-box .form-group input,
+.company .form-box .form-group select {
+  width: 48%;
+  border: 1px solid rgba(67, 67, 67, 0.2);
+  outline: none;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  background-color: rgba(67, 67, 67, 0.05);
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+.company .form-box .form-group input::-moz-placeholder, .company .form-box .form-group select::-moz-placeholder {
+  font-size: 0.85rem;
+}
+.company .form-box .form-group input::placeholder,
+.company .form-box .form-group select::placeholder {
+  font-size: 0.85rem;
+}
+.company .form-box .form-group input:focus,
+.company .form-box .form-group select:focus {
+  border: 1px solid rgba(39, 85, 252, 0.6431372549);
+}
+.company .form-box .form-group .full-width {
+  width: 100%;
+}
+.company .form-box .btn {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.company .form-box .btn input[type=submit] {
+  background-color: #2755fc;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  width: 100%;
+}
+.company .form-box .btn input[type=submit]:hover {
+  background-color: #1e3a8a;
+}
+.company .form-box .btn input[type=submit]:active {
+  background-color: #1e40af;
+  transform: scale(0.95);
+}
+.company .form-box .btn input[type=submit]:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(39, 85, 252, 0.5);
+}
+@media (max-width: 768px) {
+  .company .form-group input,
+  .company .form-group select {
+    width: 100%;
+  }
+  .company .title {
+    font-size: 1.2rem;
+  }
+  .company .sub-title {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=company-form.css.map */

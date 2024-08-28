@@ -1,0 +1,161 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اضافة عميل جديد</title>
+    <link rel="stylesheet" href="scss/addInvoicescss/addInvoice.scss">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./scss/generalscss/general.css">
+    <link rel="stylesheet" href="./scss/headerscss/header.css">
+
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>بوابة هيئة الدخل و الزكاة</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="./company-form.html">الشركة</a></li>
+                    <li><a href="./logs.html">السجلات</a></li>
+                    <li><a href="./clients.html">العملاء</a></li>
+                    <li><a href="./BillingErrorChecking.html">فحص خلل الفواتير</a></li>
+                    <li><a href="./users.html">المستخدمين</a></li>
+                    <li><a href="./Devices.html">الجهاز</a></li>
+                    <li><a href="./invoices.html">الفواتير</a></li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <div class="contanier-main">
+    
+    <div class="add-invoice container">
+        <h1 class="title">
+            اضافة فاتورة جديدة
+        </h1>
+
+        <hr>
+
+
+        <form>
+            <div class="form-group form-box">
+
+                <div class="search-invoice">
+                    <input class="full-width" type="text" placeholder="رقم فاتورة النظام">
+
+                    <button>
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                </div>
+
+                <div class="form-group">
+                    <input readonly type="text" placeholder="رقم الفاتورة">
+                    <input readonly type="text" placeholder="تاريخ الفاتورة">
+                </div>
+
+                <div class="form-date">
+                    <label for="">تاريخ التوصيل</label>
+                    <input type="date" placeholder="تاريخ التوصيل">
+                    <label for="">اقصي تاريخ للتوصيل</label>
+                    <input type="date" placeholder="اقصي تاريخ للتوصيل">
+                </div>
+
+                
+
+                <div class="form-group">
+                    <input readonly type="text" placeholder="المدفوع نقدا">
+                    <input readonly type="text" placeholder="المدفوع فيزا">
+                </div>
+
+                <div class="form-group">
+                    <input readonly type="text" placeholder="المدفوع بتحويل بنكي">
+                    <input readonly type="text" placeholder="اجمالي المدفوع">
+                </div>
+
+                <div class="form-group">
+                    <input readonly type="text" placeholder="اجمالى الفاتورة قبل الخصم">
+                    <input readonly type="text" placeholder="اجمالي الخصم">
+                </div>
+
+                <div class="form-group">
+                    <input readonly type="text" placeholder="اجمالي الضريبه">
+                    <input readonly type="text" placeholder="الصافي">
+                    <input readonly type="text" class="full-width" placeholder="الاجمالي بالضريبه">
+                </div>
+
+                <div class="form-group ">
+                    <label for="">فئة الضريبة الرئيسية</label>
+                    <select class="full-width" name="" id="">
+                        <option value="">...</option>
+                        <option value="">التوريدات الخاضعة للضريبة%</option>
+                        <option value="">التوريدات المعفاة</option>
+                        <option value="">التوريدات الخاضعة لنسبة الصفر</option>
+                        <option value="">التوريدات الخاضعة للضريبة</option>
+                    </select>
+                    <label for="">فئة الضريبة الفرعية</label>
+                    <select class="full-width" name="" id="">
+                        <option value="">...</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="">نوع الفاتورة</label>
+                    <select class="full-width" name="" id="">
+                        <option value="">...</option>
+                        <option value="">B2C</option>
+                        <option value="">B2B</option>
+                    </select>
+
+                    <input readonly class="full-width" type="text" placeholder="المبلغ المتبقي">
+
+                    <label for="">سبب الارجاع</label>
+                    <select class="full-width" name="" id="">
+                        <option value="">إلغاء أو تعليق التوريدات بعد حدوثها كلياً أو جزئياً</option>
+                        <option value="">في حالة حدوث تغيير أو تعديل جوهري في التوريد مما يؤدي إلى تغيير ضريبة القيمة المضافة المستحقة</option>
+                        <option value="">في حالة استرداد البضائع أو الخدمات</option>
+                        <option value="">في حالة التغيير في معلومات البائع أو المشتري</option>
+                        <option value="">تعديل قيمة التوريد المتفق عليها مسبقاً بين المورد والمستهلك</option>
+                    </select>
+                </div>
+
+                <div class="group-checkbox">
+
+                    <div class="checkbox">
+                        <label for="">هل عينه؟</label>
+                        <input type="checkbox" id="">
+                    </div>
+
+                    <div class="checkbox">
+                        <label for="">هل صادرات؟</label>
+                        <input type="checkbox" id="">
+                    </div>
+
+                    <div class="checkbox">
+                        <label for="">هل ملخص فترة؟</label>
+                        <input type="checkbox" id="">
+                    </div>
+
+                </div>
+
+
+             <div class="btn">
+                <input type="submit" value="اضافة فاتورة جديدة">
+            </div>
+            </div>
+
+            
+        </form>
+    </div>
+    </div>
+</body>
+</html>

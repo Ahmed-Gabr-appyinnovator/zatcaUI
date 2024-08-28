@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعديل بيانات المستخدم</title>
+    <link rel="stylesheet" href="scss/edituserscss/editUser.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./scss/generalscss/general.css">
+    <link rel="stylesheet" href="./scss/headerscss/header.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>بوابة هيئة الدخل و الزكاة</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="./company-form.html">الشركة</a></li>
+                    <li><a href="./logs.html">السجلات</a></li>
+                    <li><a href="./clients.html">العملاء</a></li>
+                    <li><a href="./BillingErrorChecking.html">فحص خلل الفواتير</a></li>
+                    <li><a href="./users.html">المستخدمين</a></li>
+                    <li><a href="./Devices.html">الجهاز</a></li>
+                    <li><a href="./invoices.html">الفواتير</a></li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container-main">
+        <div class="edit-user container">
+            <h1 class="title">تعديل بيانات المستخدم</h1>
+            <hr>
+            <form>
+                <div class="form-box">
+                    <div class="form-group">
+                        <select class="full-width" aria-label="User ID">
+                            <option value="" selected disabled>رقم المستخدم</option>
+                            <option value="admin">admin</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="اسم العميل بالعربية" class="full-width">
+                        <input type="text" placeholder="اسم العميل بالإنجليزية" class="full-width">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" placeholder="ذكرني بالفواتير المتأخرة (عدد) الساعات" class="full-width">
+                        <div class="checkbox">
+                            <input type="checkbox" id="b2cReminder">
+                            <label for="b2cReminder">التنبيه بفواتير B2C المتأخرة</label>
+                        </div>
+                    </div>
+
+                    <div class="btn">
+                        <input type="submit" value="حفظ التعديلات">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

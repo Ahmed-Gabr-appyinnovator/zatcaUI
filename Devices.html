@@ -1,0 +1,147 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الاجهزة</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./scss/generalscss/general.css"/>
+    <link rel="stylesheet" href="./scss/headerscss/header.css" />
+    <link rel="stylesheet" href="./scss/devicescss/devices.css"/>
+    <link rel="stylesheet" href="/scss/Devicescss/devices.scss"/>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <div class="logo">
+          <h1>بوابة هيئة الدخل و الزكاة</h1>
+        </div>
+        <nav class="navigation">
+          <ul>
+            <li><a href="./company-form.html">الشركة</a></li>
+            <li><a href="./logs.html">السجلات</a></li>
+            <li><a href="./clients.html">العملاء</a></li>
+            <li><a href="./BillingErrorChecking.html">فحص خلل الفواتير</a></li>
+            <li><a href="./users.html">المستخدمين</a></li>
+            <li><a href="./Devices.html">الجهاز</a></li>
+            <li><a href="./invoices.html">الفواتير</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container-main">
+      <div class="device">
+        <h1 class="title">الاجهزة</h1>
+        <div class="add-device">
+          <a href="./add-device.html">
+            <button>
+              اضافة جهاز جديد
+              <i class="fas fa-plus"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Search Bar -->
+      <div class="search-bar container">
+        <input
+          type="text"
+          id="customSearch"
+          placeholder=" ابحث باسم الجهاز او رقم الجهاز" 
+        />
+      </div>
+
+      <div class="container-main">
+        <div class="container mt-1">
+          <div class="data_table">
+            <table
+              id="example"
+              class="table table-striped table-bordered table-hover"
+              style="width: 100%"
+            >
+              <thead>
+                <tr>
+                  <th>رقم الجهاز</th>
+                  <th>التوقيع الالكتروني</th>
+                  <th>تاريخ الانتهاء</th>
+                  <th>حالة الجهاز</th>
+                  <th>الاعدادات</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>faf911aa-ad52-498c-8d85-e8ed4ee26f83</td>
+                  <td>2025-01-01 18:39:00</td>
+                  <td>نشط</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm" onclick="editClient()">تعديل</button>
+                    <button class="btn btn-danger btn-sm">حذف</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function centerAlignTableHeaderCells(tableSelector) {
+      const tables = document.querySelectorAll(tableSelector);
+
+      tables.forEach(table => {
+        const headers = table.querySelectorAll('th');
+         headers.forEach(header => {
+           header.style.textAlign = 'center'; 
+                 header.style.verticalAlign = 'middle'; 
+               });
+         });
+      }     
+
+      centerAlignTableHeaderCells('.data_table');
+        $(document).ready(function () {
+          var table = $("#example").DataTable({
+            scrollX: true,
+            pagingType: "simple_numbers",
+            searching: true,
+            ordering: true,
+            info: true,
+            language: {
+              url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/ar.json",
+            },
+          });
+
+        $("#customSearch").on("keyup", function () {
+          var searchTerm = $(this).val();
+          table.search(searchTerm).draw();
+        });
+      });
+
+      function editClient() {
+        window.location.href = "edit-device.html";
+      }
+    </script>
+  </body>
+</html>

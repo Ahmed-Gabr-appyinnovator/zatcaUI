@@ -1,0 +1,291 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>invoices</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"/>
+    <link
+      href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="./scss/generalscss/general.css" />
+    <link rel="stylesheet" href="./scss/headerscss/header.css" />
+    <link rel="stylesheet" href="./scss/invoiceDetails.scss/invoiceDetails.scss">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <div class="logo">
+          <h1>بوابة هيئة الدخل و الزكاة</h1>
+        </div>
+        <nav class="navigation">
+          <ul>
+            <li><a href="./company-form.html">الشركة</a></li>
+            <li><a href="./logs.html">السجلات</a></li>
+            <li><a href="./clients.html">العملاء</a></li>
+            <li><a href="./BillingErrorChecking.html">فحص خلل الفواتير</a></li>
+            <li><a href="./users.html">المستخدمين</a></li>
+            <li><a href="./Devices.html">الجهاز</a></li>
+            <li><a href="./invoices.html">الفواتير</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container-main">
+        <div class="back-button">        
+            <a href="./invoices.html"> <button> العودة لقائمة الفواتير</button></a>
+        </div>
+        <div class="sec-one">
+            <div class="invoice">
+              <h1 class="title">عرض بيانات الفاتورة</h1>
+            </div>
+            <div class="table-box">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th colspan="3">معلومات البائع</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>الاسم</td>
+                  <td>Company</td>
+                  <td>Name</td>
+                </tr>
+                <tr>
+                    <td>رقم المبنى</td>
+                    <td>11</td>
+                    <td>Building No</td>
+                </tr>
+                <tr>
+                  <td>اسم الشارع</td>
+                  <td>شارع الملك فيصل</td>
+                  <td>Street Name</td>
+                </tr>
+                <tr>
+                  <td>المقاطعة</td>
+                  <td>الرياض</td>
+                  <td>District</td>
+                </tr>
+                <tr>
+                  <td>المدينة</td>
+                  <td>الرياض</td>
+                  <td>City</td>
+                </tr>
+                <tr>
+                  <td>الدولة</td>
+                  <td>السعودية</td>
+                  <td>Country</td>
+                </tr>
+                <tr>
+                  <td>الرمز البريدي</td>
+                  <td>12345</td>
+                  <td>Postal Code</td>
+                </tr>
+                <tr>
+                  <td>رقم صندوق البريد الاضافى</td>
+                  <td>111111</td>
+                  <td>PO Box Add.No</td>
+                </tr>
+                <tr>
+                  <td>الرقم الضريبى</td>
+                  <td>399999999000003</td>
+                  <td>VAT Number</td>
+                </tr>
+                <tr>
+                  <td>المعرف المالى الثانى</td>
+                  <td>1234567890</td>
+                  <td>Seecond Buseinss ID</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th colspan="3">معلومات المشترى</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>الاسم</td>
+                  <td>محمد</td>
+                  <td>Name</td>
+                </tr>
+                <tr>
+                  <td>رقم المبنى</td>
+                  <td>33</td>
+                  <td>Building No</td>
+                </tr>
+                <tr>
+                  <td>اسم الشارع</td>
+                  <td>المعادى</td>
+                  <td>Street Name</td>
+                </tr>
+                <tr>
+                  <td>المقاطعة</td>
+                  <td>القاهرة</td>
+                  <td>District</td>
+                </tr>
+                <tr>
+                  <td>المدينة</td>
+                  <td>القاهرة</td>
+                  <td>City</td>
+                </tr>
+                <tr>
+                  <td>الدولة</td>
+                  <td>مصر</td>
+                  <td>Country</td>
+                </tr>
+                <tr>
+                  <td>الرمز البريدي</td>
+                  <td>77889</td>
+                  <td>Postal Code</td>
+                </tr>
+                <tr>
+                  <td>رقم صندوق البريد الاضافى</td>
+                  <td>22331</td>
+                  <td>PO Box Add.No</td>
+                </tr>
+                <tr>
+                  <td>الرقم الضريبى</td>
+                  <td>1211221212</td>
+                  <td>VAT Number</td>
+                </tr>
+                <tr>
+                  <td>المعرف المالى الثانى</td>
+                  <td>221124434</td>
+                  <td>Seecond Buseinss ID</td>  
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+            <label for=""><a target="_blank" href="https://appyfruits.com/wp-admin/admin.php?page=wc-orders&action=edit&id=61"> رقم فاتورة النظام </a>
+                <i class="fas fa-question-circle"></i>
+            </label>
+            <input readonly class="full-width" type="text" placeholder="رقم فاتورة النظام ">
+            <input readonly type="text" placeholder="رقم الفاتورة">
+            <input readonly type="text" placeholder="تاريخ الفاتورة">
+        </div>
+
+        <div class="form-date">
+            <label for="">تاريخ التوصيل</label>
+            <input type="text" readonly placeholder="تاريخ التوصيل">
+            <label for="">اقصي تاريخ للتوصيل</label>
+            <input type="text" readonly placeholder="اقصي تاريخ للتوصيل">
+        </div>
+        
+        <div class="form-group">
+            <input readonly type="text" placeholder="المدفوع نقدا">
+            <input readonly type="text" placeholder="المدفوع فيزا">
+        </div>
+
+        <div class="form-group">
+            <input readonly type="text" placeholder="المدفوع بتحويل بنكي">
+            <input readonly type="text" placeholder="اجمالي المدفوع">
+        </div>
+        
+        <div class="form-group">
+            <input readonly type="text" placeholder="اجمالى الفاتورة قبل الخصم">
+            <input readonly type="text" placeholder="اجمالي الخصم">
+        </div>
+        
+        <div class="form-group">
+            <input readonly type="text" placeholder="اجمالي الضريبه">
+            <input readonly type="text" placeholder="الصافي">
+            <input readonly type="text" class="full-width" placeholder="الاجمالي بالضريبه">
+        </div>
+        
+        <div class="form-group ">
+            <label for="">فئة الضريبة الرئيسية</label>
+            <input readonly type="text" class="full-width" placeholder="">
+        
+            <label for="">فئة الضريبة الفرعية</label>
+            <input readonly type="text" class="full-width" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">نوع الفاتورة</label>
+            <input type="text" class="full-width" readonly placeholder="">
+            <input readonly class="full-width" type="text" placeholder="المبلغ المتبقي">
+        </div>
+    
+            <div class="group-checkbox">
+                <div class="checkbox">
+                    <label for="">هل عينه؟</label>
+                    <input type="checkbox" id="">
+                </div>
+                <div class="checkbox">
+                    <label for="">هل صادرات؟</label>
+                    <input type="checkbox" id="">
+                </div>
+                <div class="checkbox">
+                    <label for="">هل ملخص فترة؟</label>
+                    <input type="checkbox" id="">
+                </div>
+            </div>  
+        </div>
+            <div class="table-details">  
+                <h4 class="mt-5">تفاصيل الفاتورة</h4>
+                <div class="table-wrapper">
+                    <table class="table table-bordered mt-3">
+                        <thead>
+                            <tr>
+                                <th>مسلسل</th>
+                                <th>الاسم العربي</th>
+                                <th>الاسم الانجليزي</th>
+                                <th>السعر</th>
+                                <th>الكمية</th>
+                                <th>اجمالى الخصم</th>
+                                <th>النسبه المفوته للضريبه</th>
+                                <th>مبلغ الضريبه</th>
+                                <th>المبلغ الصافى</th>
+                                <th>الاجمالى بعد الضريبه</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>5</td>
+                                <td>Iphone</td>
+                                <td>Iphone</td>
+                                <td>25000</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>15%</td>
+                                <td>7500</td>
+                                <td>50000</td>
+                                <td>57500</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>MAC Book</td>
+                                <td>MAC Book</td>
+                                <td>10000</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>15%</td>
+                                <td>1500</td>
+                                <td>10000</td>
+                                <td>11500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
+
+    </div>
+</body>
+</html>
